@@ -1,0 +1,111 @@
+router 9
+
+
+do show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    10.0.0.0/8 is directly connected, FastEthernet0/1
+R    11.0.0.0/8 [120/1] via 10.0.0.2, 00:00:19, FastEthernet0/1
+R    12.0.0.0/8 [120/2] via 10.0.0.2, 00:00:19, FastEthernet0/1
+                [120/2] via 14.0.0.1, 00:00:09, Ethernet0/1/0
+R    13.0.0.0/8 [120/1] via 14.0.0.1, 00:00:09, Ethernet0/1/0
+C    14.0.0.0/8 is directly connected, Ethernet0/1/0
+R    192.168.1.0/24 [120/2] via 10.0.0.2, 00:00:19, FastEthern
+
+router 10
+
+do show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+R    10.0.0.0/8 [120/1] via 11.0.0.1, 00:00:15, FastEthernet0/1
+C    11.0.0.0/8 is directly connected, FastEthernet0/1
+C    12.0.0.0/8 is directly connected, FastEthernet0/0
+R    13.0.0.0/8 [120/1] via 12.0.0.2, 00:00:13, FastEthernet0/0
+R    14.0.0.0/8 [120/2] via 11.0.0.1, 00:00:15, FastEthernet0/1
+                [120/2] via 12.0.0.2, 00:00:13, FastEthernet0/0
+C    192.168.1.0/24 is directly connected, Ethernet0/1/0
+R    200.200.200.0/24 [120/2] via 11.0.0.1, 00:00:15, FastEthernet0/1
+
+
+router 11
+
+do show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    10.0.0.0/8 is directly connected, FastEthernet0/0
+C    11.0.0.0/8 is directly connected, FastEthernet0/1
+R    12.0.0.0/8 [120/1] via 11.0.0.2, 00:00:17, FastEthernet0/1
+R    13.0.0.0/8 [120/2] via 10.0.0.1, 00:00:23, FastEthernet0/0
+                [120/2] via 11.0.0.2, 00:00:17, FastEthernet0/1
+R    14.0.0.0/8 [120/1] via 10.0.0.1, 00:00:23, FastEthernet0/0
+R    192.168.1.0/24 [120/1] via 11.0.0.2, 00:00:17, FastEthernet0/1
+R    200.200.200.0/24 [120/1] via 10.0.0.1, 00:00:23, FastEthernet0/0
+
+router 12
+
+do show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+R    10.0.0.0/8 [120/2] via 13.0.0.2, 00:00:26, FastEthernet0/0
+                [120/2] via 12.0.0.1, 00:00:21, FastEthernet0/1
+R    11.0.0.0/8 [120/1] via 12.0.0.1, 00:00:21, FastEthernet0/1
+C    12.0.0.0/8 is directly connected, FastEthernet0/1
+C    13.0.0.0/8 is directly connected, FastEthernet0/0
+R    14.0.0.0/8 [120/1] via 13.0.0.2, 00:00:26, FastEthernet0/0
+R    192.168.1.0/24 [120/1] via 12.0.0.1, 00:00:21, FastEthernet0/1
+R    200.200.200.0/24 [120/2] via 13.0.0.2, 00:00:26, FastEthernet0/0
+
+router 13
+
+Router(config)#do show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+R    10.0.0.0/8 [120/1] via 14.0.0.2, 00:00:19, FastEthernet0/0
+R    11.0.0.0/8 [120/2] via 14.0.0.2, 00:00:19, FastEthernet0/0
+                [120/2] via 13.0.0.1, 00:00:14, FastEthernet0/1
+R    12.0.0.0/8 [120/1] via 13.0.0.1, 00:00:14, FastEthernet0/1
+C    13.0.0.0/8 is directly connected, FastEthernet0/1
+C    14.0.0.0/8 is directly connected, FastEthernet0/0
+R    192.168.1.0/24 [120/2] via 13.0.0.1, 00:00:14, FastEthernet0/1
+R    200.200.200.0/24 [120/1] via 14.0.0.2, 00:00:19, FastEthernet0/0
+
