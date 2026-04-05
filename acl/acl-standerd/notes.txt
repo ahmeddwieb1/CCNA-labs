@@ -1,0 +1,21 @@
+
+
+how to make acl standed by CLI 
+
+Router(config)#access-list 1 deny 200.200.200.2
+Router(config)#access-list 1 permit any 
+Router(config)#int ethernet 0/1/0
+Router(config-if)#ip access-group 1 out 
+
+to see the acl 
+
+*do show ac
+Standard IP access list 1
+    10 deny host 200.200.200.2 (4 match(es))
+    20 permit any (10 match(es))
+
+to remove acl 
+
+Router(config)#no access-list 1 
+
+
