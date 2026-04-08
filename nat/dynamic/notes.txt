@@ -1,0 +1,35 @@
+ 
+
+make nat dynamic config 
+
+Router(config)#ip route 0.0.0.0 0.0.0.0 f0/1
+Router(config)#access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)#ip nat pool aa 10.0.0.1 10.0.0.4 netmask 255.255.255.0
+Router(config)#ip nat inside source list 1 pool aa --->only diff between dynamic and PAT is in this line  
+Router(config)#int f0/0
+Router(config-if)#ip nat inside 
+Router(config-if)#ex
+Router(config)#int f0/1
+Router(config-if)#ip nat outside 
+Router(config-if)#do wr
+Building configuration...
+[OK]
+
+
+if you want make pat config
+
+ 
+
+Router(config)#ip route 0.0.0.0 0.0.0.0 f0/1
+Router(config)#access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)#ip nat pool aa 10.0.0.1 10.0.0.4 netmask 255.255.255.0
+Router(config)#ip nat inside source list 1 pool aa overload --> change this line to overload 
+Router(config)#int f0/0
+Router(config-if)#ip nat inside 
+Router(config-if)#ex
+Router(config)#int f0/1
+Router(config-if)#ip nat outside 
+Router(config-if)#do wr
+Building configuration...
+[OK]
+
